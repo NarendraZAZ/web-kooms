@@ -5,10 +5,6 @@
 /.pnp
 .pnp.*
 .yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
 
 # testing
 /coverage
@@ -20,22 +16,23 @@
 # production
 /build
 
-# misc
-.DS_Store
-*.pem
+# LOCAL ENV FILES (Mencegah Kunci Supabase/Midtrans Bocor)
+.env
+.env*.local
+.env.local
+.env.production
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
+# Temporary & Archive Files
+*.zip
+gen.zip
+--linked/
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Supabase Local Temp
+supabase/.temp/
+
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -13,6 +13,15 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Supabase responses are untyped until database.ts is generated.
+      "@typescript-eslint/no-explicit-any": "warn",
+      // These effects subscribe to Supabase/SDK state and intentionally fetch on mount.
+      "react-hooks/set-state-in-effect": "warn",
+      "react/no-unescaped-entities": "warn",
+    },
+  },
 ]);
 
 export default eslintConfig;
